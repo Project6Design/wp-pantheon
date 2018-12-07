@@ -1,5 +1,5 @@
 {
-    "name": "project6/SITE",
+    "name": "project6/wordpress",
     "description": "Custom Wordpress site",
     "repositories":[
         {
@@ -8,10 +8,15 @@
         }
     ],
     "require": {
-        "aws/aws-sdk-php":"*",
-        "wpackagist-plugin/akismet":"dev-trunk",
         "wpackagist-plugin/wordpress-seo":">=7.0.2",
-        "wpackagist-theme/hueman":"*"
+        "wpackagist-plugin/kint-debugger": "^1.2",
+        "wpackagist-plugin/manual-image-crop": "^1.12",
+        "wpackagist-plugin/redirection": "^3.6",
+        "wpackagist-plugin/regenerate-thumbnails": "^3.0",
+        "wpackagist-plugin/timber-library": "^1.8",
+        "wpackagist-plugin/user-role-editor": "^4.47",
+        "wpackagist-plugin/wp-native-php-sessions": "^0.6.9",
+        "wpackagist-plugin/wp-redis": "^0.7.0"
     },
     "autoload": {
         "psr-0": {

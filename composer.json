@@ -19,8 +19,8 @@
         "wpackagist-plugin/wp-redis": "^0.7.0"
     },
     "autoload": {
-        "psr-0": {
-            "Project6": "src/"
+        "psr-4": {
+            "Project6\\": "src/"
         }
     }
 }

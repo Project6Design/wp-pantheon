@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit2ed14ccdaa96231b60161052317ba332
 {
     public static $prefixLengthsPsr4 = array (
+        'P' => 
+        array (
+            'Project6\\' => 9,
+        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
@@ -14,19 +18,13 @@ class ComposerStaticInit2ed14ccdaa96231b60161052317ba332
     );
 
     public static $prefixDirsPsr4 = array (
+        'Project6\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Composer\\Installers\\' => 
         array (
             0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
-        ),
-    );
-
-    public static $prefixesPsr0 = array (
-        'P' => 
-        array (
-            'Project6' => 
-            array (
-                0 => __DIR__ . '/../..' . '/src',
-            ),
         ),
     );
 
@@ -35,7 +33,6 @@ class ComposerStaticInit2ed14ccdaa96231b60161052317ba332
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit2ed14ccdaa96231b60161052317ba332::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit2ed14ccdaa96231b60161052317ba332::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit2ed14ccdaa96231b60161052317ba332::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

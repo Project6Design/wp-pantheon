@@ -43,8 +43,10 @@ class Person extends BasePostType {
         ],
       ]
     );
-  }
 
+
+    // add_filter('wp_insert_post_data', [$this, 'updatePersonTitle'], '99', 2);
+  }
 
   public function index()
   {
@@ -54,5 +56,10 @@ class Person extends BasePostType {
   public function view()
   {
     d('view');
+  }
+
+  public function shortcodes()
+  {
+    return [];
   }
 }

@@ -146,10 +146,10 @@ abstract class BaseSite extends Site
   public function addToTwig($twig)
   {
 
-    $twig->addExtension( new Twig_Extension_StringLoader() );
+    $twig->addExtension( new \Twig_Extension_StringLoader() );
 
     // Convert all internal absolute links into relative links.
-    $twig->addFilter('relative_links', new Twig_SimpleFilter('relative_links', array($this, 'relativeLinks')));
+    $twig->addFilter('relative_links', new \Twig_SimpleFilter('relative_links', array($this, 'relativeLinks')));
 
     return $twig;
   }

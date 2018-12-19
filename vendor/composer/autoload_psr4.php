@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Project6\\' => array($baseDir . '/src'),
+    'Sobrato\\' => array($baseDir . '/src/Sobrato'),
+    'Project6\\' => array($baseDir . '/src/Project6'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
 );

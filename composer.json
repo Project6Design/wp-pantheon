@@ -20,7 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Project6\\": "src/"
+            "Project6\\": "src/Project6",
+            "Sobrato\\": "src/Sobrato"
         }
     }
 }

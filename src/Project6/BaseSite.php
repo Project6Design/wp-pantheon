@@ -11,14 +11,6 @@ abstract class BaseSite extends Site
 
   public function __construct()
   {
-    // Todo: Has to go into function.php
-    // if (function_exists('acf_add_options_page')) {
-    //   acf_add_options_page();
-    // }
-    // add_action('after_setup_theme', [$this, 'themeSupports']);
-    //add_action('init', [$this, 'editorStyles']);
-    // add_action('login_head', [$this, 'loginStylesheet']);
-
     parent::__construct();
   }
 
@@ -27,12 +19,18 @@ abstract class BaseSite extends Site
    */
   public function init()
   {
+    if (function_exists('acf_add_options_page')) {
+      acf_add_options_page();
+    }
+
     add_filter('timber_context', [$this, 'addToContext']);
     add_filter('get_twig', [$this, 'addToTwig']);
     add_filter('login_headerurl', [$this, 'logoUrl']);
     add_filter('default_hidden_meta_boxes', [$this, 'hideMetaBox'], 10, 2);
 
     add_action('init', [$this, 'removeRoles']);
+    add_action('after_setup_theme', [$this, 'themeSupports']);
+    add_action('login_head', [$this, 'loginStylesheet']);
 
     $this->registerPostTypes();
     $this->registerRoutes();
@@ -215,5 +213,61 @@ abstract class BaseSite extends Site
     $text = str_replace($targets, '', $text);
 
     return $text;
+  }
+
+  public function themeSupports() {
+    // Add default posts and comments RSS feed links to head.
+    add_theme_support( 'automatic-feed-links' );
+
+    /*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
+    add_theme_support( 'title-tag' );
+
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     *
+     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     */
+    add_theme_support( 'post-thumbnails' );
+
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support(
+      'html5', array(
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+      )
+    );
+
+    /*
+     * Enable support for Post Formats.
+     *
+     * See: https://codex.wordpress.org/Post_Formats
+     */
+    add_theme_support(
+      'post-formats', array(
+        'aside',
+        'image',
+        'video',
+        'quote',
+        'link',
+        'gallery',
+        'audio',
+      )
+    );
+
+    add_theme_support( 'menus' );
+  }
+
+  public function loginStylesheet() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/css/site.css" />';
   }
 }

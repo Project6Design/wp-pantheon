@@ -5,12 +5,18 @@
 
 namespace Project6\PostTypes;
 
-abstract class BasePostType
+abstract class PostType
 {
   /**
    * Register the post type and related taxonomy.
    */
   abstract public function register();
+
+  /**
+   * Identify yourself.
+   */
+  abstract public function label();
+
 
   /**
    * Define shortcodes

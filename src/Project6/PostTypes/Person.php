@@ -2,9 +2,14 @@
 
 namespace Project6\PostTypes;
 
-use Project6\PostTypes\BasePostType;
+use Project6\PostTypes\PostType;
 
-class Person extends BasePostType {
+class Person extends PostType {
+
+  public function label()
+  {
+    return 'person';
+  }
 
 
   public function register()

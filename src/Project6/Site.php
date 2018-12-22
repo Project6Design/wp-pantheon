@@ -3,9 +3,9 @@
 namespace Project6;
 
 use Project6\PostTypes\BasePostType;
-use Timber\Site;
+use Timber\Site as BaseSite;
 
-abstract class BaseSite extends Site
+abstract class Site extends BaseSite
 {
   protected $postTypes = [];
 

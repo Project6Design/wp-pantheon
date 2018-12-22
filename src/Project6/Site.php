@@ -2,7 +2,7 @@
 
 namespace Project6;
 
-use Project6\PostTypes\BasePostType;
+use Project6\PostTypes\PostType;
 use Timber\Site as BaseSite;
 
 abstract class Site extends BaseSite
@@ -39,9 +39,9 @@ abstract class Site extends BaseSite
 
   /**
    * Add a new post type to the site
-   * @param BasePostType $postType
+   * @param PostType $postType
    */
-  public function addPostType(BasePostType $postType)
+  public function addPostType(PostType $postType)
   {
     array_push($this->postTypes, $postType);
   }

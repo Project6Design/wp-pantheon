@@ -11,7 +11,6 @@ class Person extends PostType {
     return 'person';
   }
 
-
   public function register()
   {
     register_post_type('person',

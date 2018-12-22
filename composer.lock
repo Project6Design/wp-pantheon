@@ -208,15 +208,15 @@
         },
         {
             "name": "wpackagist-plugin/timber-library",
-            "version": "1.8.3",
+            "version": "1.8.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/timber-library/",
-                "reference": "tags/1.8.3"
+                "reference": "tags/1.8.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/timber-library.1.8.3.zip",
+                "url": "https://downloads.wordpress.org/plugin/timber-library.1.8.4.zip",
                 "reference": null,
                 "shasum": null
             },
